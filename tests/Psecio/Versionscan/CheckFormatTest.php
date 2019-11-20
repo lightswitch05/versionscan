@@ -29,7 +29,10 @@ class CheckFormatTest extends \PHPUnit_Framework_TestCase
             $this->assertArrayHasKey('threat', $check, 'Missing "threat" for ' . $id);
             $this->assertArrayHasKey('summary', $check, 'Missing "summary" for ' . $id);
             $this->assertArrayHasKey('fixVersions', $check, 'Missing "fixVersions" for ' . $id);
+            $this->assertArrayHasKey('lastModifiedDate', $check, 'Missing "lastModifiedDate" for ' . $id);
+            $this->assertArrayHasKey('publishedDate', $check, 'Missing "publishedDate" for ' . $id);
             $this->assertArrayHasKey('base', $check['fixVersions'], 'Missing "fixVersions[base]" for ' . $id);
+            $this->assertNotEmpty($check['fixVersions']['base'], 'Missing "fixVersions[base]" for ' . $id);
 
             // Make sure the versions are in order
             $versions = $check['fixVersions']['base'];
