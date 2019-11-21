@@ -79,8 +79,8 @@ class ScanCommand extends Command
 
                     return $r1 > $r2 ? -1 : 1;
                 } elseif ($sort == 'risk') {
-                    $r1 = (integer) $row1['risk'];
-                    $r2 = (integer) $row2['risk'];
+                    $r1 = (float) $row1['risk'];
+                    $r2 = (float) $row2['risk'];
 
                     return $r1 > $r2 ? -1 : 1;
                 }
